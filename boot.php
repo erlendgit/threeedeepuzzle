@@ -8,7 +8,7 @@ use \ThreeDeePuzzle\Board;
 // one shape can have one direction/rotation. Best would be the most complex shape.
 
 $queue = array(
-	Shape::create('AfterFour\\NSLittle'),
+	Shape::create('AfterFour\\Duck'),
 	Shape::create('AfterFour\\Thee'),
 	Shape::create('AfterFour\\Ell'),
 	Shape::create('AfterFour\\EllSecond'),

@@ -3,7 +3,7 @@
 namespace ThreeDeePuzzle\AfterFour;
 use ThreeDeePuzzle\Shape;
 
-class NSLittle extends Shape {
+class Duck extends Shape {
 	public function xPossible($dir, $rot) {
 	}
 
