@@ -5,8 +5,9 @@ namespace ThreeDeePuzzle;
 class Shape {
 	use Logable;
 
-	public function create($name) {
-		return new __NAMESPACE__ . '\\' . $name;
+	public static function create($name) {
+		$class = __NAMESPACE__ . '\\' . $name;
+		return new $class();
 	}
 
 	/**
@@ -21,7 +22,7 @@ class Shape {
 		$this->log("Enter function...", __FUNCTION__);
 
 		// try all directions
-		foreach ($this->directionsPossible as $dir) {
+		foreach ($this->directionsPossible() as $dir) {
 		$this->log("Loop $dir...", __FUNCTION__);
 			// loop right, up, away
 			foreach($this->xPossible($dir) as $offsetX) {
@@ -88,7 +89,7 @@ class Shape {
 		switch($dir) {
 			case 'up':
 			case 'down':
-			case 'away',
+			case 'away':
 			case 'back':
 			case 'left':
 			case 'right':

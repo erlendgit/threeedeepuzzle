@@ -10,5 +10,6 @@ trait Logable {
 
 		print "== $class::$context ==\n";
 		print_r($msg);
+		print "\n";
 	}
 }
