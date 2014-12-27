@@ -1,0 +1,15 @@
+{
+    "name": "erlend/3dpuzzel",
+    "description": "ThreeDeePuzzle",
+    "authors": [
+        {
+            "name": "Erlend ter Maat",
+            "email": "erwitema@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"ThreeDeePuzzle": "src/"}
+    }
+}
