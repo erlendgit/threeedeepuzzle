@@ -1,7 +1,6 @@
 <?php
 
 namespace ThreeDeePuzzle\ForFour;
-
 use ThreeDeePuzzle\Shape;
 
 class Square extends Shape {
@@ -17,10 +16,8 @@ class Square extends Shape {
 		return array(0, 1, 2);
 	}
 
-	public function directionsPossible() {
-		return array(
-			'right',
-		);
+	public function rotationsPossible() {
+		return array(0, 90);
 	}
 
 	protected function coordinates() {
