@@ -6,10 +6,10 @@ use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
 
 $queue = array(
-	Shape::create('Shape'),
-	Shape::create('Shape'),
-	Shape::create('Shape'),
-	Shape::create('Shape'),
+	Shape::create('ForFour\\Square'),
+	Shape::create('ForFour\\Square'),
+	Shape::create('ForFour\\Square'),
+	Shape::create('ForFour\\Square'),
 );
 
 $boot = array_shift($queue);
