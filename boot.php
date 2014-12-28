@@ -5,21 +5,26 @@ require "vendor/autoload.php";
 use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
 
-// one shape can have one direction/rotation. Best would be the most complex shape.
+//
+// @todo Translate shape and steps to rotation
+// @todo Guess the expected color at the required position
+// @todo Validate with the board
+// @todo Apply the shape to the board
+//
 
 $queue = array(
 	Shape::create('AfterFour\\LadderWhite'),
-	Shape::create('AfterFour\\Duck'),
-	Shape::create('AfterFour\\Thee'),
-	Shape::create('AfterFour\\Ell'),
-	Shape::create('AfterFour\\EllSecond'),
-	Shape::create('AfterFour\\You'),
+	Shape::create('AfterFour\\Aech'),
+	Shape::create('AfterFour\\Ladder'),
+	Shape::create('AfterFour\\NS'),
+	Shape::create('AfterFour\\CapitalEll'),
 	Shape::create('AfterFour\\Won'),
 	Shape::create('AfterFour\\WonSecond'),
-	Shape::create('AfterFour\\CapitalEll'),
-	Shape::create('AfterFour\\NS'),
-	Shape::create('AfterFour\\Ladder'),
-	Shape::create('AfterFour\\Aech'),
+	Shape::create('AfterFour\\You'),
+	Shape::create('AfterFour\\Ell'),
+	Shape::create('AfterFour\\EllSecond'),
+	Shape::create('AfterFour\\Thee'),
+	Shape::create('AfterFour\\Duck'),
 );
 $queue = array(
 	Shape::create('ForFour\\Square'),
