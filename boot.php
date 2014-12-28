@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @author Erlend ter Maat <erwitema@gmail.com>
  * @license GNU GPL version 3
  */
-
 require "vendor/autoload.php";
 
 use \ThreeDeePuzzle\Shape;
@@ -18,28 +18,28 @@ use \ThreeDeePuzzle\Board;
 //
 
 $queue = array(
-	Shape::create('AfterFour\\LadderWhite'),
-	Shape::create('AfterFour\\Aech'),
-	Shape::create('AfterFour\\Ladder'),
-	Shape::create('AfterFour\\NS'),
-	Shape::create('AfterFour\\CapitalEll'),
-	Shape::create('AfterFour\\Won'),
-	Shape::create('AfterFour\\WonSecond'),
-	Shape::create('AfterFour\\You'),
-	Shape::create('AfterFour\\Ell'),
-	Shape::create('AfterFour\\EllSecond'),
-	Shape::create('AfterFour\\Thee'),
-	Shape::create('AfterFour\\Duck'),
+  Shape::create('AfterFour\\LadderWhite'),
+  Shape::create('AfterFour\\Aech'),
+  Shape::create('AfterFour\\Ladder'),
+  Shape::create('AfterFour\\NS'),
+  Shape::create('AfterFour\\CapitalEll'),
+  Shape::create('AfterFour\\Won'),
+  Shape::create('AfterFour\\WonSecond'),
+  Shape::create('AfterFour\\You'),
+  Shape::create('AfterFour\\Ell'),
+  Shape::create('AfterFour\\EllSecond'),
+  Shape::create('AfterFour\\Thee'),
+  Shape::create('AfterFour\\Duck'),
 );
 $queue = array(
-	Shape::create('ForFour\\Square'),
-	Shape::create('ForFour\\Square2'),
-	Shape::create('ForFour\\Square3'),
-	Shape::create('ForFour\\Square4'),
-	Shape::create('ForFour\\Square5'),
-	Shape::create('ForFour\\Square6'),
-	Shape::create('ForFour\\Square7'),
-	Shape::create('ForFour\\Square8'),
+  Shape::create('ForFour\\Square'),
+  Shape::create('ForFour\\Square2'),
+  Shape::create('ForFour\\Square3'),
+  Shape::create('ForFour\\Square4'),
+  Shape::create('ForFour\\Square5'),
+  Shape::create('ForFour\\Square6'),
+  Shape::create('ForFour\\Square7'),
+  Shape::create('ForFour\\Square8'),
 );
 
 $boot = array_shift($queue);

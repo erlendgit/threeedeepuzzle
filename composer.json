@@ -9,6 +9,8 @@
         }
     ],
     "autoload": {
-        "psr-4": {"ThreeDeePuzzle\\": "src/"}
+        "psr-4": {
+            "ThreeDeePuzzle\\": "src/"
+        }
     }
 }
