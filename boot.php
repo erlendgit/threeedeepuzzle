@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Erlend ter Maat <erwitema@gmail.com>
+ * @license GNU GPL version 3
+ */
 
 require "vendor/autoload.php";
 
