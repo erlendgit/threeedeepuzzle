@@ -21,4 +21,15 @@ class LadderWhite extends Ladder {
 
 		return $coordinates;
 	}
+  
+	// most complex shape, only one direction
+	public function directionsPossible() {
+		return array('x');
+	}
+
+  // most complex shape, only one rotation
+  // let the others rotate around me, i'm not moving.
+	public function rotationsPossible() {
+		return array(0);
+	}
 }

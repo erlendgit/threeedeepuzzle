@@ -2,6 +2,10 @@
 	
 namespace ThreeDeePuzzle;
 
+define('TDP_CLEAR', 'clear');
+define('TDP_BLACK', 'black');
+define('TDP_WHITE', 'white');
+
 class Point {
 	public $x;
 	public $y;

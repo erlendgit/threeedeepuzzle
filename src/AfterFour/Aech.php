@@ -16,19 +16,15 @@ class Aech extends Shape{
 		return range(0, 1);
 	}
 
-	// most complex shape, only one direction
-	public function directionsPossible() {
-		return array('x');
-	}
 	// most complex shape, only one rotation
 	public function rotationsPossible() {
-		return array(0);
+		return array(0, 90);
 	}
 
 	// coordinates
 	protected function coordinates() {
 		$coordinates = array(
-			//        ri up aw color
+			//           ri up aw color
 			// new Point(0, 0, 0, 'white'),
 			// new Point(0, 0, 1, 'black'),
 			// new Point(0, 1, 0, 'black'),

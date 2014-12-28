@@ -7,16 +7,28 @@ class Board {
 	// chain of correctly placed elements
 	public $match;
 
+  /**
+   * Left-bottom-front color, to estimate the other colors
+   * @var integer
+   */
+  public $lbfColor;
+
+  // Matrix of occupied locations [x][y][z]
 	// occupied locations
 	protected $occ;
 
 	// constructor
 	public function __construct() {
 		$this->match = array();
+    $this->lbfColor = TDP_CLEAR;
 	}
 
 	public function apply(Shape $shape, Position $pos) {
 		// add the shape to the $occ list.
+    
+    if ($this->lbfColor == LBF_CLEAR) {
+      // set the color;
+    }
 
 		// and register my shape.
 		$result->match[] = array(
@@ -31,6 +43,9 @@ class Board {
 		// two criteria:
 
 		// 1) The color must match the expected color
+    if ($this->lbfColor != LBF_CLEAR) {
+      // calculate the expected color, and verify with the shape
+    }
 
 		// 2) All locations must be empty.
 
