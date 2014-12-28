@@ -1,0 +1,1 @@
+A simple shape of 8 2x2 cubes that must fit into one big 4x4 cube.
