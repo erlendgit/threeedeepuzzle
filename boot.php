@@ -10,6 +10,7 @@ use \ThreeDeePuzzle\Board;
 // @todo Guess the expected color at the required position
 // @todo Validate with the board
 // @todo Apply the shape to the board
+// @todo Give the result back in a human readable format.
 //
 
 $queue = array(
@@ -39,4 +40,4 @@ $result = $boot->process(new Board(), $queue);
 
 $usage = memory_get_usage();
 $humanUsage = $boot->bytes($usage);
-$boot->log("Final memory = $humanUsage...", "__SCRIPT_END__");
+$boot->log("Final memory = $humanUsage...", "[[Script end]]");
