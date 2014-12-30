@@ -11,18 +11,6 @@ use ThreeDeePuzzle\Shape;
 
 class NS extends Shape {
 
-  public function xPossible($dir, $rot) {
-    
-  }
-
-  public function yPossible($dir, $rot) {
-    
-  }
-
-  public function zPossible($dir, $rot) {
-    
-  }
-
   protected function coordinates() {
     $coordinates = array(
       //        ri up aw color

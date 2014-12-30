@@ -11,16 +11,8 @@ use ThreeDeePuzzle\Shape;
 
 class Aech extends Shape {
 
-  public function xPossible($dir, $rot) {
-    return range(0, 3);
-  }
-
-  public function yPossible($dir, $rot) {
-    return range(0, 1);
-  }
-
-  public function zPossible($dir, $rot) {
-    return range(0, 1);
+  public function mirrorPossible() {
+    return array('no');
   }
 
   // most complex shape, only one rotation

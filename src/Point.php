@@ -18,7 +18,7 @@ class Point {
   public $z;
   public $color;
 
-  public function __construct($x, $y, $z, $color) {
+  public function __construct($x, $y, $z, $color = TDP_CLEAR) {
     $this->x = $x;
     $this->y = $y;
     $this->z = $z;

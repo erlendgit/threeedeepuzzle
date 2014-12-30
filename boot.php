@@ -10,7 +10,6 @@ use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
 
 //
-// @todo Translate shape and steps to rotation
 // @todo Guess the expected color at the required position
 // @todo Validate with the board
 // @todo Apply the shape to the board
@@ -43,7 +42,7 @@ $queue = array(
 );
 
 $boot = array_shift($queue);
-$result = $boot->process(new Board(), $queue);
+$result = $boot->process(new Board(4, 4, 4), $queue);
 
 
 $usage = memory_get_usage();

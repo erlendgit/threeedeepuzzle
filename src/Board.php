@@ -13,6 +13,13 @@ class Board {
 
   // chain of correctly placed elements
   public $match;
+  
+  // max x
+  public $dimX;
+  // max y
+  public $dimY;
+  // max z
+  public $dimZ;
 
   /**
    * Left-bottom-front color, to estimate the other colors
@@ -24,9 +31,13 @@ class Board {
   protected $occ;
 
   // constructor
-  public function __construct() {
+  public function __construct($rowsX, $rowsY, $rowsZ) {
     $this->match = array();
     $this->lbfColor = TDP_CLEAR;
+    
+    $this->dimX = $rowsX - 1;
+    $this->dimY = $rowsY - 1;
+    $this->dimZ = $rowsZ - 1;
   }
 
   public function apply(Shape $shape, Position $pos) {

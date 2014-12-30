@@ -16,7 +16,7 @@ class LadderWhite extends Ladder {
 
     $coordinates = parent::coordinates();
 
-    foreach ($coordinates as &$point) {
+    foreach ($coordinates as $point) {
       if ($point->color == 'white') {
         $point->color = 'black';
       } else {

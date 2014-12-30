@@ -11,20 +11,12 @@ use ThreeDeePuzzle\Shape;
 
 class Square extends Shape {
 
-  public function xPossible($dir) {
-    return array(0, 1, 2);
-  }
-
-  public function yPossible($dir) {
-    return array(0, 1, 2);
-  }
-
-  public function zPossible($dir) {
-    return array(0, 1, 2);
-  }
-
   public function rotationsPossible() {
     return array(0, 90);
+  }
+  
+  public function mirrorPossible() {
+    return array('no');
   }
 
   protected function coordinates() {

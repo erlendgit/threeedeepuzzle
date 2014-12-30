@@ -11,16 +11,8 @@ use ThreeDeePuzzle\Shape;
 
 class Ladder extends Shape {
 
-  public function xPossible($dir, $rot) {
-    
-  }
-
-  public function yPossible($dir, $rot) {
-    
-  }
-
-  public function zPossible($dir, $rot) {
-    
+  public function mirrorPossible() {
+    return array('no');
   }
 
   protected function coordinates() {
