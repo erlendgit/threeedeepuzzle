@@ -17,12 +17,37 @@ class Shape {
   protected $pointsY;
   // z (forward) direction posible rows
   protected $pointsZ;
-  // translated shape, 0, 0, 0 based
-  protected $pointsShape;
 
-  public static function create($name) {
+  /**
+   * translated shape
+   * @var Point[]
+   */
+  protected $pointsShape;
+  protected $id;
+
+  public static function create($name, $id) {
     $class = __NAMESPACE__ . '\\' . $name;
-    return new $class();
+    return new $class($id);
+  }
+
+  protected function __construct($id) {
+    $this->id = $id;
+  }
+
+  public function getId() {
+    return $this->id;
+  }
+
+  /**
+   * Not left front bottom, but the first in the array
+   * @return Point;
+   */
+  public function firstPoint() {
+    return $this->pointsShape[0];
+  }
+
+  public function allPoints() {
+    return $this->pointsShape;
   }
 
   /**
@@ -53,22 +78,27 @@ class Shape {
           foreach ($this->pointsX as $offsetX) {
             foreach ($this->pointsY as $offsetY) {
               foreach ($this->pointsZ as $offsetZ) {
-                $position = new Position($offsetX, $offsetY, $offsetZ, $dir, $rot);
+                $position = new Position($offsetX, $offsetY, $offsetZ);
                 $this->log("Try $offsetX, $offsetY, $offsetZ...", __FUNCTION__);
 
-                $result = $board->test($this, $position);
+                $result = $board->apply($this, $position);
 
                 // Do I fit?
-                if ($result instanceof Board) {
-                  $this->log("Match! Try next...", __FUNCTION__);
+                if (!$result) {
+                  $board->apply($this, $position, TRUE);
+                } else {
+                  if (!$next) {
+                    $this->log("\nM A T C H !\n\nThis was the last one!", __FUNCTION__);
+                    return $result;
+                  }
+                  $this->log("\nM A T C H !\n\nTry next...", __FUNCTION__);
 
                   // Take the result to the next in the queue
-                  $sure = $next->process($result, $queue);
+                  $sure = $next->process($board, $queue);
 
-                  // does the next fit?
-                  if ($sure instanceof Board) {
-                    $this->log("Others match too!", __FUNCTION__);
-                    // exit
+                  if (!$sure) {
+                    $board->apply($this, $position, TRUE);
+                  } else {
                     return $sure;
                   }
                 }
@@ -122,7 +152,7 @@ class Shape {
 
     foreach ($base as $point) {
       $mirrorXY = 0;
-      switch($mirr) {
+      switch ($mirr) {
         default:
           $this->log("Invalid mirror [$mirr]. Valid values are: yes, no.", __FUNCTION__);
           return FALSE;
@@ -133,7 +163,7 @@ class Shape {
           $mirrorXY = -1;
           break;
       }
-      
+
       switch ($rot) {
         default:
           $this->log("Invalid rotation [$rot]. Valid values are: 0, 90, 180 and 270.", __FUNCTION__);
@@ -229,7 +259,7 @@ class Shape {
 
     $this->pointsShape = $translated;
 
-    return $result;
+    return TRUE;
   }
 
 }

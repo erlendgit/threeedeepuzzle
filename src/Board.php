@@ -13,7 +13,6 @@ class Board {
 
   // chain of correctly placed elements
   public $match;
-  
   // max x
   public $dimX;
   // max y
@@ -26,52 +25,79 @@ class Board {
    * @var integer
    */
   public $lbfColor;
-  // Matrix of occupied locations [x][y][z]
-  // occupied locations
-  protected $occ;
 
   // constructor
   public function __construct($rowsX, $rowsY, $rowsZ) {
     $this->match = array();
-    $this->lbfColor = TDP_CLEAR;
-    
+    $this->lbfColor = Point::CLEAR;
+
     $this->dimX = $rowsX - 1;
     $this->dimY = $rowsY - 1;
     $this->dimZ = $rowsZ - 1;
   }
-
-  public function apply(Shape $shape, Position $pos) {
-    // add the shape to the $occ list.
-
-    if ($this->lbfColor == LBF_CLEAR) {
-      // set the color;
+  
+  public function report() {
+    $this->log('Expected color: ' . $this->lbfColor, __FUNCTION__);
+    $this->log(print_r($this->match, TRUE), __FUNCTION__);
+  }
+  
+  public function validParity($even, $color) {
+    if (!$even && $color == $this->lbfColor) {
+      return FALSE;
+    } else if ($even && $color != $this->lbfColor) {
+      return FALSE;
     }
-
-    // and register my shape.
-    $result->match[] = array(
-      'shape' => $shape,
-      'position' => $position,
-    );
+    return TRUE;
   }
 
-  public function test(Shape $shape, Position $pos) {
+  public function apply(Shape $shape, Position $pos, $undo = FALSE) {
     // try to put shape at pos
     // two criteria:
     // 1) The color must match the expected color
-    if ($this->lbfColor != LBF_CLEAR) {
-      // calculate the expected color, and verify with the shape
+    // calculate the expected color, and verify with the shape
+    $first = $shape->firstPoint();
+    $sum = $first->sum() + $pos->sum();
+    $even = (($sum % 2) == 0);
+    
+    if ($this->lbfColor != Point::CLEAR) {
+      if (!$this->validParity($even, $first->color)) {
+        $shape->log('Mismatch by color: ' . $this->lbfColor, __FUNCTION__);
+        return FALSE;
+      }
+    } else {
+      
     }
 
+    $hashTable = array();
     // 2) All locations must be empty.
-    // if we can go there:
-    if ($match) {
-      $result = clone($this);
-      $result->apply($shape, $pos);
-      return $result;
+    // 
+    foreach($shape->allPoints() as $point) {
+      $hash = $point->hash($pos);
+      if ($undo) {
+        unset($this->match[$hash]);
+      } else {
+        if (!empty($this->match[$hash])) {
+          $shape->log('Mismatch by position', __FUNCTION__);
+          return FALSE;
+        }
+        $hashTable[$hash] = $point->apply($pos, $shape->getId());
+      }
     }
+    
+    if ($undo) {
+      if (count($this->match) == 0) {
+        $this->lbfColor = Point::CLEAR;
+      }
+    } else {
+      $this->match = array_merge($this->match, $hashTable);
 
-    // else, fail
-    return FALSE;
+      if ($even && ($first->color == Point::WHITE)) {
+        $this->lbfColor = Point::WHITE;
+      } else {
+        $this->lbfColor = Point::BLACK;
+      }
+    }
+    return TRUE;
   }
 
 }

@@ -7,22 +7,24 @@
 
 namespace ThreeDeePuzzle;
 
-define('TDP_CLEAR', 'clear');
-define('TDP_BLACK', 'black');
-define('TDP_WHITE', 'white');
+class Point extends Coordinate {
 
-class Point {
-
-  public $x;
-  public $y;
-  public $z;
   public $color;
+  public $id;
+  
+  const CLEAR = '.';
+  const BLACK = 'b';
+  const WHITE = 'w';
 
-  public function __construct($x, $y, $z, $color = TDP_CLEAR) {
-    $this->x = $x;
-    $this->y = $y;
-    $this->z = $z;
+  public function __construct($x, $y, $z, $color = Point::CLEAR) {
+    parent::__construct($x, $y, $z);
     $this->color = $color;
+  }
+  
+  public function apply(Position $p, $id = ' ') {
+    $application = new Point($this->x + $p->x, $this->y + $p->y, $this->z + $p->z, $this->color);
+    $application->id = $id;
+    return $application;
   }
 
 }
