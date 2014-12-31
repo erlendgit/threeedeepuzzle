@@ -9,12 +9,13 @@ namespace ThreeDeePuzzle;
 
 trait Logable {
 
-  public function log($msg, $context, $class = NULL) {
-    if (!$class) {
-      $class = get_class($this);
+  public function log($msg, $context=NULL, $class = NULL) {
+    if ($context) {
+      if (!$class) {
+        $class = get_class($this);
+      }
+      print "== $class::$context ==\n";
     }
-
-    print "== $class::$context ==\n";
     print_r($msg);
     print "\n";
   }

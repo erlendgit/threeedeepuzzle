@@ -61,13 +61,14 @@ class Shape {
 
     $usage = memory_get_usage();
     $humanUsage = $this->bytes($usage);
-    $this->log("Enter function; memory = $humanUsage...", __FUNCTION__);
+    //$this->log("Enter function; memory = $humanUsage...", __FUNCTION__);
+    $this->log("Next shape", __FUNCTION__);
 
     // try all directions
     foreach ($this->mirrorPossible() as $mirr) {
       foreach ($this->directionsPossible() as $dir) {
         foreach ($this->rotationsPossible() as $rot) {
-          $this->log("Loop $mirr, $dir, $rot...", __FUNCTION__);
+          //$this->log("Loop $mirr, $dir, $rot...", __FUNCTION__);
 
           $res = $this->translate($dir, $rot, $mirr, $board);
           if (!$res) {
@@ -79,25 +80,20 @@ class Shape {
             foreach ($this->pointsY as $offsetY) {
               foreach ($this->pointsZ as $offsetZ) {
                 $position = new Position($offsetX, $offsetY, $offsetZ);
-                $this->log("Try $offsetX, $offsetY, $offsetZ...", __FUNCTION__);
 
                 $result = $board->apply($this, $position);
 
                 // Do I fit?
-                if (!$result) {
-                  $board->apply($this, $position, TRUE);
-                } else {
+                if ($result) {
                   if (!$next) {
-                    $this->log("\nM A T C H !\n\nThis was the last one!", __FUNCTION__);
                     return $result;
                   }
-                  $this->log("\nM A T C H !\n\nTry next...", __FUNCTION__);
-
+                  
                   // Take the result to the next in the queue
                   $sure = $next->process($board, $queue);
 
                   if (!$sure) {
-                    $board->apply($this, $position, TRUE);
+                    $board->undo($this);
                   } else {
                     return $sure;
                   }
