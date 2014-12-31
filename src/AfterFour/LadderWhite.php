@@ -7,6 +7,8 @@
 
 namespace ThreeDeePuzzle\AfterFour;
 
+use ThreeDeePuzzle\Point;
+
 /**
  * Like ladder, but switched black and white
  */
@@ -17,10 +19,10 @@ class LadderWhite extends Ladder {
     $coordinates = parent::coordinates();
 
     foreach ($coordinates as $point) {
-      if ($point->color == 'white') {
-        $point->color = 'black';
+      if ($point->color == Point::WHITE) {
+        $point->color = Point::BLACK;
       } else {
-        $point->color = 'white';
+        $point->color = Point::WHITE;
       }
     }
 

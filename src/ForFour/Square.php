@@ -16,6 +16,10 @@ class Square extends Shape {
     return array(0, 90);
   }
   
+  public function directionsPossible() {
+    return array('x');
+  }
+  
   public function mirrorPossible() {
     return array('no');
   }

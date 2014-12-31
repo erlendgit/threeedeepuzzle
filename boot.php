@@ -28,7 +28,7 @@ $queue = array(
   Shape::create('AfterFour\\Thee', 'K'),
   Shape::create('AfterFour\\Duck', 'L'),
 );
-$queue = array(
+$queue2 = array(
   Shape::create('ForFour\\Square', 'M'),
   Shape::create('ForFour\\Square2', 'O'),
   Shape::create('ForFour\\Square3', 'P'),
@@ -37,7 +37,7 @@ $queue = array(
   Shape::create('ForFour\\Square6', 'U'),
   Shape::create('ForFour\\Square7', 'X'),
   Shape::create('ForFour\\Square8', 'Z'),
-  Shape::create('ForFour\\Square', 'E'),
+//  Shape::create('ForFour\\Square', 'E'),
 );
 
 $boot = array_shift($queue);

@@ -8,6 +8,7 @@
 namespace ThreeDeePuzzle\AfterFour;
 
 use ThreeDeePuzzle\Shape;
+use ThreeDeePuzzle\Point;
 
 class Thee extends Shape {
 
@@ -18,17 +19,11 @@ class Thee extends Shape {
   protected function coordinates() {
     $coordinates = array(
       //        ri up aw color
-      // new Point(0, 0, 0, 'white'),
-      // new Point(0, 0, 1, 'black'),
-      // new Point(0, 1, 0, 'black'),
-      // new Point(0, 1, 1, 'white'),
-      // new Point(1, 0, 0, 'black'),
-      // new Point(1, 0, 1, 'white'),
-      // new Point(1, 1, 0, 'white'),
-      // new Point(1, 1, 1, 'black'),
+      new Point(0, 0, 0, Point::WHITE),
+      new Point(0, 0, 1, Point::BLACK),
+      new Point(0, 0, 2, Point::WHITE),
+      new Point(0, 1, 1, Point::WHITE),
     );
-
-    $this->log($coordinates, __FUNCTION__);
 
     return $coordinates;
   }
