@@ -38,7 +38,7 @@ class Reporter {
 			$this->gigasops = $this->gigasops + 1;
 		}
 
-		if ($title != '' || $this->last_excerpt < strtotime('-5 seconds')) {
+		if ($title != '' || $this->last_excerpt < strtotime('-1 hours')) {
 
 			$count_since_last = $this->gigasops - $this->last_count;
 
@@ -48,6 +48,7 @@ class Reporter {
 
 			print "==\n";
 			print "== Script started at " . date('r') . "\n";
+			print "== Processed single shape operations: {$this->sops}\n";
 			print "== Processed giga shape operations: {$this->gigasops}\n";
 			print "== Processed since last report: {$count_since_last}\n";
 			print "==\n";
