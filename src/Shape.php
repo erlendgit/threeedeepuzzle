@@ -97,7 +97,7 @@ class Shape {
                   $sure = $next->process($board, $queue, $reporter);
 
                   if (!$sure) {
-                    $board->undo($this);
+                    $board->revert($this);
                   } else {
                     return $sure;
                   }

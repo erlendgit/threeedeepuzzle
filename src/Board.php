@@ -89,7 +89,7 @@ class Board {
     return TRUE;
   }
 
-  public function undo(Shape $shape) {
+  public function revert(Shape $shape) {
     if ($this->applications[$shape->getId()]) {
       unset($this->applications[$shape->getId()]);
       
