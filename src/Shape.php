@@ -56,7 +56,7 @@ class Shape {
    *
    * @return Board
    */
-  public final function process(Board $board, array $queue) {
+  public final function process(Board $board, array $queue, Reporter $reporter=NULL) {
     $next = array_shift($queue);
 
     $usage = memory_get_usage();
@@ -75,6 +75,8 @@ class Shape {
             return FALSE;
           }
 
+          $reporter->report();
+
           // loop right, up, away
           foreach ($this->pointsX as $offsetX) {
             foreach ($this->pointsY as $offsetY) {
@@ -86,11 +88,13 @@ class Shape {
                 // Do I fit?
                 if ($result) {
                   if (!$next) {
+                    $reporter->report($board, "Puzzle solved!");
+                    $board->report();
                     return $result;
                   }
                   
                   // Take the result to the next in the queue
-                  $sure = $next->process($board, $queue);
+                  $sure = $next->process($board, $queue, $reporter);
 
                   if (!$sure) {
                     $board->undo($this);

@@ -8,10 +8,11 @@ require "vendor/autoload.php";
 
 use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
+use \ThreeDeePuzzle\Erlend\Reporter as ErlendReporter;
 
 //
-// @todo Apply the shape to the board
-// @todo Give the result back in a human readable format.
+// @TODO: (almost done) report during the way about the number of posibilities tried and yet to come
+// @TODO: run the script in HipHop VM
 //
 
 $queue = array(
@@ -41,11 +42,9 @@ $queue2 = array(
 );
 
 $boot = array_shift($queue);
-$board = new Board(4, 4, 4);
-$result = $boot->process($board, $queue);
+$result = $boot->process(new Board(4, 4, 4), $queue, new Reporter());
 
 if ($result) {
-  $board->report();
   $board->log('Full match!!!', 'end');
 }
 
