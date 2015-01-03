@@ -65,8 +65,8 @@ class Board {
             $color = Point::CLEAR;
           }
 
-          $xyzShape[$rowX][$rowY] = $xyzShape[$rowX][$rowY] . $id;
-          $xyzColor[$rowX][$rowY] = $xyzColor[$rowX][$rowY] . $color;
+          $xyzShape[$rowX][$rowY] = @$xyzShape[$rowX][$rowY] . $id;
+          $xyzColor[$rowX][$rowY] = @$xyzColor[$rowX][$rowY] . $color;
         }
       }
     }
@@ -150,10 +150,12 @@ class Board {
     $this->applications[$shape->getId()] = 1;
     $this->match = array_merge($this->match, $hashTable);
 
-    if ($even && ($first->color == Point::WHITE)) {
-      $this->lbfColor = Point::WHITE;
-    } else {
-      $this->lbfColor = Point::BLACK;
+    if ($this->lbfColor == Point::CLEAR) {
+      if ($even && ($first->color == Point::WHITE)) {
+        $this->lbfColor = Point::WHITE;
+      } else {
+        $this->lbfColor = Point::BLACK;
+      }
     }
     return TRUE;
   }
