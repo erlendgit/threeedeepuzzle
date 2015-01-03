@@ -55,7 +55,7 @@ class Board {
         // z normal
         foreach (range(0, $this->dimZ) as $rowZ) {
           $position = new Position($rowX, $rowY, $rowZ);
-          $point = $this->match[$position->hash()];
+          $point = @$this->match[$position->hash()];
 
           if ($point) {
             $id = $point->id;
@@ -93,7 +93,7 @@ class Board {
     if ($this->applications[$shape->getId()]) {
       unset($this->applications[$shape->getId()]);
       
-      $this->log(implode(', ', array_keys($this->applications)), __FUNCTION__);
+      //$this->log(implode(', ', array_keys($this->applications)), __FUNCTION__);
       
       $remove = array();
 

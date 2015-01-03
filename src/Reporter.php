@@ -38,7 +38,7 @@ class Reporter {
 			$this->gigasops = $this->gigasops + 1;
 		}
 
-		if ($title != '' || $this->last_excerpt < strtotime('-5 minutes')) {
+		if ($title != '' || $this->last_excerpt < strtotime('-5 seconds')) {
 
 			$count_since_last = $this->gigasops - $this->last_count;
 

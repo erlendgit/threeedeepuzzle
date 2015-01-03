@@ -9,6 +9,7 @@ require "vendor/autoload.php";
 
 use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
+use \ThreeDeePuzzle\Reporter;
 use \ThreeDeePuzzle\Erlend\Reporter as ErlendReporter;
 
 //
@@ -43,6 +44,7 @@ $queue2 = array(
 );
 
 $boot = array_shift($queue);
+
 $result = $boot->process(new Board(4, 4, 4), $queue, new Reporter());
 
 if ($result) {

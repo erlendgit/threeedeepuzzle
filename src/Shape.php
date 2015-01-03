@@ -62,7 +62,7 @@ class Shape {
     $usage = memory_get_usage();
     $humanUsage = $this->bytes($usage);
     //$this->log("Enter function; memory = $humanUsage...", __FUNCTION__);
-    $this->log("Next shape", __FUNCTION__);
+    //$this->log("Next shape", __FUNCTION__);
 
     // try all directions
     foreach ($this->mirrorPossible() as $mirr) {
@@ -75,7 +75,7 @@ class Shape {
             return FALSE;
           }
 
-          $reporter->report();
+          $reporter->report($board);
 
           // loop right, up, away
           foreach ($this->pointsX as $offsetX) {
