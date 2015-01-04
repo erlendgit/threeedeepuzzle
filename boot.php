@@ -11,12 +11,6 @@ use \ThreeDeePuzzle\Shape;
 use \ThreeDeePuzzle\Board;
 use \ThreeDeePuzzle\Reporter;
 use \ThreeDeePuzzle\Position;
-use \ThreeDeePuzzle\Erlend\Reporter as ErlendReporter;
-
-//
-// @TODO: (almost done) report during the way about the number of posibilities tried and yet to come
-// @TODO: run the script in HipHop VM
-//
 
 /**
  * @var Shape[]
@@ -50,12 +44,4 @@ $queue2 = array(
 print "Script start at " . date('r') . "\n\n\n";
 
 $boot = array_shift($queue);
-$result = $boot->process(new Board(4, 4, 4), $queue, new Reporter());
-
-if ($result) {
-  $board->log('Full match!!!', 'end');
-}
-
-$usage = memory_get_peak_usage();
-$humanUsage = $boot->bytes($usage);
-$boot->log("Final memory = $humanUsage...", "[[Script end]]");
+$boot->process(new Board(4, 4, 4), $queue, new Reporter());

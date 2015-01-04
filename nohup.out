@@ -1,0 +1,58 @@
+Script start at Sun, 04 Jan 2015 15:17:51 +0100
+
+
+# Puzzle solved!
+
+==
+== Script started at Sun, 04 Jan 2015 15:40:29 +0100
+== Processed single shape operations: 15754054
+== Processed giga shape operations: 0
+== Processed since last report: 0
+==
+
+== ThreeDeePuzzle\Board::report ==
+Expected color: w
+slice at prosition 0
+[bwbw] [KHHH]
+[wbwb] [AHMH]
+[bwbw] [AAMM]
+[wbwb] [AAAM]
+slice at prosition 1
+[wbwb] [KKKK]
+[bwbw] [BBBL]
+[wbwb] [FBLL]
+[bwbw] [BBBL]
+slice at prosition 2
+[bwbw] [FGID]
+[wbwb] [FGID]
+[bwbw] [FGID]
+[wbwb] [FGII]
+slice at prosition 3
+[wbwb] [EEEE]
+[bwbw] [EGCD]
+[wbwb] [ECCD]
+[bwbw] [CCCD]
+== ThreeDeePuzzle\Board::report ==
+Expected color: w
+slice at prosition 0
+[bwbw] [KHHH]
+[wbwb] [AHMH]
+[bwbw] [AAMM]
+[wbwb] [AAAM]
+slice at prosition 1
+[wbwb] [KKKK]
+[bwbw] [BBBL]
+[wbwb] [FBLL]
+[bwbw] [BBBL]
+slice at prosition 2
+[bwbw] [FGID]
+[wbwb] [FGID]
+[bwbw] [FGID]
+[wbwb] [FGII]
+slice at prosition 3
+[wbwb] [EEEE]
+[bwbw] [EGCD]
+[wbwb] [ECCD]
+[bwbw] [CCCD]
+PHP Notice:  Undefined variable: board in /Users/erlend/Documents/0-snippets/3dpuzzel/boot.php on line 56
+PHP Fatal error:  Call to a member function log() on a non-object in /Users/erlend/Documents/0-snippets/3dpuzzel/boot.php on line 56
