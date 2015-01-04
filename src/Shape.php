@@ -86,7 +86,6 @@ class Shape {
                 if ($result) {
                   if (!$next) {
                     $reporter->report($board, "Puzzle solved!");
-                    $board->report();
                     return $result;
                   }
                   
