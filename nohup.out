@@ -32,27 +32,3 @@ slice at prosition 3
 [bwbw] [EGCD]
 [wbwb] [ECCD]
 [bwbw] [CCCD]
-== ThreeDeePuzzle\Board::report ==
-Expected color: w
-slice at prosition 0
-[bwbw] [KHHH]
-[wbwb] [AHMH]
-[bwbw] [AAMM]
-[wbwb] [AAAM]
-slice at prosition 1
-[wbwb] [KKKK]
-[bwbw] [BBBL]
-[wbwb] [FBLL]
-[bwbw] [BBBL]
-slice at prosition 2
-[bwbw] [FGID]
-[wbwb] [FGID]
-[bwbw] [FGID]
-[wbwb] [FGII]
-slice at prosition 3
-[wbwb] [EEEE]
-[bwbw] [EGCD]
-[wbwb] [ECCD]
-[bwbw] [CCCD]
-PHP Notice:  Undefined variable: board in /Users/erlend/Documents/0-snippets/3dpuzzel/boot.php on line 56
-PHP Fatal error:  Call to a member function log() on a non-object in /Users/erlend/Documents/0-snippets/3dpuzzel/boot.php on line 56
