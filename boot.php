@@ -28,42 +28,27 @@ $queue = array(
   'D' => Shape::create('AfterFour\\NS', 'D'),
   'E' => Shape::create('AfterFour\\CapitalEll', 'E'),
   'F' => Shape::create('AfterFour\\Won', 'F'),
-  'G' => Shape::create('AfterFour\\WonSecond', 'G'),
+  'G' => Shape::create('AfterFour\\Won', 'G'),
   'H' => Shape::create('AfterFour\\You', 'H'),
   'I' => Shape::create('AfterFour\\Ell', 'I'),
-  'J' => Shape::create('AfterFour\\EllSecond', 'J'),
-  'K' => Shape::create('AfterFour\\Thee', 'K'),
-  'L' => Shape::create('AfterFour\\Duck', 'L'),
+  'K' => Shape::create('AfterFour\\Ell', 'K'),
+  'L' => Shape::create('AfterFour\\Thee', 'L'),
+  'M' => Shape::create('AfterFour\\Duck', 'M'),
 );
+
 $queue2 = array(
   Shape::create('ForFour\\Square', 'M'),
-  Shape::create('ForFour\\Square2', 'O'),
-  Shape::create('ForFour\\Square3', 'P'),
-  Shape::create('ForFour\\Square4', 'S'),
-  Shape::create('ForFour\\Square5', 'T'),
-  Shape::create('ForFour\\Square6', 'U'),
-  Shape::create('ForFour\\Square7', 'X'),
-  Shape::create('ForFour\\Square8', 'Z'),
-//  Shape::create('ForFour\\Square', 'E'),
+  Shape::create('ForFour\\Square', 'O'),
+  Shape::create('ForFour\\Square', 'P'),
+  Shape::create('ForFour\\Square', 'S'),
+  Shape::create('ForFour\\Square', 'T'),
+  Shape::create('ForFour\\Square', 'U'),
+  Shape::create('ForFour\\Square', 'X'),
+  Shape::create('ForFour\\Square', 'Z'),
 );
 
-$do_test = TRUE;
-$do_test = FALSE;
-if ($do_test) {
-  $testboard = new Board(4,4,4);
-  $shape1 = clone($queue['A']);
-  $shape2 = clone($queue['C']);
-  $shape3 = clone($queue['B']);
+print "Script start at " . date('r') . "\n\n\n";
 
-  $shape1->translate('z', 0, 'no', $testboard);
-  $shape2->translate('x', 0, 'no', $testboard);
-  $shape3->translate('x', 0, 'no', $testboard);
-  $testboard->apply($shape1, new Position(0,1,0));
-  $testboard->report();
-  exit();
-}
-
-$result = NULL;
 $boot = array_shift($queue);
 $result = $boot->process(new Board(4, 4, 4), $queue, new Reporter());
 
