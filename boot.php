@@ -16,17 +16,17 @@ use \ThreeDeePuzzle\Position;
  * @var Shape[]
  */
 $queue = array(
-  'A' => Shape::create('AfterFour\\LadderWhite', 'A'),
-  'B' => Shape::create('AfterFour\\Aech', 'B'),
-  'C' => Shape::create('AfterFour\\Ladder', 'C'),
-  'D' => Shape::create('AfterFour\\NS', 'D'),
-  'E' => Shape::create('AfterFour\\CapitalEll', 'E'),
-  'F' => Shape::create('AfterFour\\Won', 'F'),
-  'G' => Shape::create('AfterFour\\Won', 'G'),
+  'A' => Shape::create('AfterFour\\Owl', 'A'),
+  'B' => Shape::create('AfterFour\\Camel', 'B'),
+  'C' => Shape::create('AfterFour\\Bat', 'C'),
+  'D' => Shape::create('AfterFour\\Lama', 'D'),
+  'E' => Shape::create('AfterFour\\Giraffe', 'E'),
+  'F' => Shape::create('AfterFour\\Saint', 'F'),
+  'G' => Shape::create('AfterFour\\Saint', 'G'),
   'H' => Shape::create('AfterFour\\You', 'H'),
-  'I' => Shape::create('AfterFour\\Ell', 'I'),
-  'K' => Shape::create('AfterFour\\Ell', 'K'),
-  'L' => Shape::create('AfterFour\\Thee', 'L'),
+  'I' => Shape::create('AfterFour\\Leopold', 'I'),
+  'K' => Shape::create('AfterFour\\Leopold', 'K'),
+  'L' => Shape::create('AfterFour\\Rambo', 'L'),
   'M' => Shape::create('AfterFour\\Duck', 'M'),
 );
 

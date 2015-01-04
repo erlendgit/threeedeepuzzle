@@ -10,7 +10,7 @@ namespace ThreeDeePuzzle\AfterFour;
 use ThreeDeePuzzle\Shape;
 use ThreeDeePuzzle\Point;
 
-class Aech extends Shape {
+class Camel extends Shape {
 
   public function mirrorPossible() {
     return array('no');

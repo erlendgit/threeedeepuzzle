@@ -10,7 +10,7 @@ namespace ThreeDeePuzzle\AfterFour;
 use ThreeDeePuzzle\Shape;
 use ThreeDeePuzzle\Point;
 
-class Ell extends Shape {
+class Lama extends Shape {
 
   protected function coordinates() {
     $coordinates = array(
@@ -18,8 +18,9 @@ class Ell extends Shape {
       new Point(0, 0, 0, Point::WHITE),
       new Point(0, 0, 1, Point::BLACK),
       new Point(0, 0, 2, Point::WHITE),
-      new Point(0, 0, 3, Point::BLACK),
-      new Point(0, 1, 0, Point::BLACK),
+      new Point(0, 1, 1, Point::WHITE),
+      new Point(0, 1, 2, Point::BLACK),
+      new Point(0, 1, 3, Point::WHITE),
     );
 
     return $coordinates;

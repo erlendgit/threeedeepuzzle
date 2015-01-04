@@ -10,7 +10,7 @@ namespace ThreeDeePuzzle\AfterFour;
 use ThreeDeePuzzle\Shape;
 use ThreeDeePuzzle\Point;
 
-class Ladder extends Shape {
+class Bat extends Shape {
 
   public function mirrorPossible() {
     return array('no');

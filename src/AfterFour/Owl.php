@@ -12,7 +12,7 @@ use ThreeDeePuzzle\Point;
 /**
  * Like ladder, but switched black and white
  */
-class LadderWhite extends Ladder {
+class Owl extends Bat {
 
   protected function coordinates() {
 
