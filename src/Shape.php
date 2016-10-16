@@ -7,6 +7,8 @@
 
 namespace ThreeDeePuzzle;
 
+use Exception;
+
 class Shape {
 
   use Logable;
@@ -25,9 +27,12 @@ class Shape {
   protected $pointsShape;
   protected $id;
 
-  public static function create($name, $id) {
-    $class = __NAMESPACE__ . '\\' . $name;
-    return new $class($id);
+  public static function create($class, $id) {
+    $shape = new $class($id);
+    if (!($shape instanceof static)) {
+      throw new Exception("$class is not a proper shape");
+    }
+    return $shape;
   }
 
   protected function __construct($id) {

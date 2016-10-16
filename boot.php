@@ -7,38 +7,40 @@
 
 require "vendor/autoload.php";
 
-use \ThreeDeePuzzle\Shape;
-use \ThreeDeePuzzle\Board;
-use \ThreeDeePuzzle\Reporter;
-use \ThreeDeePuzzle\Position;
+use ThreeDeePuzzle\Shape;
+use ThreeDeePuzzle\Board;
+use ThreeDeePuzzle\Reporter;
+use ThreeDeePuzzle\Position;
+use ThreeDeePuzzle\AfterFour;
+use ThreeDeePuzzle\ForFour;
 
 /**
  * @var Shape[]
  */
 $queue = array(
-  'A' => Shape::create('AfterFour\\Owl', 'A'),
-  'B' => Shape::create('AfterFour\\Camel', 'B'),
-  'C' => Shape::create('AfterFour\\Bat', 'C'),
-  'D' => Shape::create('AfterFour\\Lama', 'D'),
-  'E' => Shape::create('AfterFour\\Giraffe', 'E'),
-  'F' => Shape::create('AfterFour\\Saint', 'F'),
-  'G' => Shape::create('AfterFour\\Saint', 'G'),
-  'H' => Shape::create('AfterFour\\You', 'H'),
-  'I' => Shape::create('AfterFour\\Leopold', 'I'),
-  'K' => Shape::create('AfterFour\\Leopold', 'K'),
-  'L' => Shape::create('AfterFour\\Rambo', 'L'),
-  'M' => Shape::create('AfterFour\\Duck', 'M'),
+  'A' => Shape::create(AfterFour\Owl::class, 'A'),
+  'B' => Shape::create(AfterFour\Camel::class, 'B'),
+  'C' => Shape::create(AfterFour\Bat::class, 'C'),
+  'D' => Shape::create(AfterFour\Lama::class, 'D'),
+  'E' => Shape::create(AfterFour\Giraffe::class, 'E'),
+  'F' => Shape::create(AfterFour\Saint::class, 'F'),
+  'G' => Shape::create(AfterFour\Saint::class, 'G'),
+  'H' => Shape::create(AfterFour\You::class, 'H'),
+  'I' => Shape::create(AfterFour\Leopold::class, 'I'),
+  'K' => Shape::create(AfterFour\Leopold::class, 'K'),
+  'L' => Shape::create(AfterFour\Rambo::class, 'L'),
+  'M' => Shape::create(AfterFour\Duck::class, 'M'),
 );
 
 $queue2 = array(
-  Shape::create('ForFour\\Square', 'M'),
-  Shape::create('ForFour\\Square', 'O'),
-  Shape::create('ForFour\\Square', 'P'),
-  Shape::create('ForFour\\Square', 'S'),
-  Shape::create('ForFour\\Square', 'T'),
-  Shape::create('ForFour\\Square', 'U'),
-  Shape::create('ForFour\\Square', 'X'),
-  Shape::create('ForFour\\Square', 'Z'),
+  Shape::create(ForFour\Square::class, 'M'),
+  Shape::create(ForFour\Square::class, 'O'),
+  Shape::create(ForFour\Square::class, 'P'),
+  Shape::create(ForFour\Square::class, 'S'),
+  Shape::create(ForFour\Square::class, 'T'),
+  Shape::create(ForFour\Square::class, 'U'),
+  Shape::create(ForFour\Square::class, 'X'),
+  Shape::create(ForFour\Square::class, 'Z'),
 );
 
 print "Script start at " . date('r') . "\n\n\n";
